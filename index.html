@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'body-and-buttons': '#598392',
+                        'container': '#124559',
+                        'result-color': '#01161e'
+
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito', 'sans-serif']
+                    },
+                    boxShadow: {
+                        '3xl': '0px 2px 10px rgba(255, 255, 255, 0.3)',
+                    },
+                    maxWidth: {
+                        '8xl': 'calc(100% - 40px)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="bg-body-and-buttons text-white flex font-sans items-center justify-center p-2.5 min-h-screen">
+
+    <div id="container" class="bg-container p-5 w-[350px] max-w-full shadow-3xl">
+        <h2 class="text-3xl font-bold my-2.5 mx-0 text-center">Password Generator</h2>
+        <div id="result-container"
+            class="bg-result-color flex justify-start items-center relative text-[18px] py-[12px] px-[10px] h-[50px] w-full">
+            <span id="result" class="max-w-8xl"></span>
+            <button id="clipboard"
+                class="text-white bg-body-and-buttons py-[8px] px-[12px] text-base cursor-pointer absolute right-[5px] w-14 h-10 flex justify-center items-center transition-all hover:bg-[#857683]">
+                Copy
+            </button>
+        </div>
+
+        <div id="settings">
+            <div id="setting" class="flex justify-between items-center my-[15px] mx-0">
+                <label>Password length</label>
+                <input class="mr-0 bg-white text-black p-1 w-14 text-center focus:outine-result-color" type="number"
+                    id="length" min='4' max='20' value="20" />
+            </div>
+            <div id="setting" class="flex justify-between items-center my-[15px] mx-0">
+                <label>Include uppercase letters</label>
+                <input class="mr-0" type="checkbox" id="uppercase" checked />
+            </div>
+            <div id="setting" class="flex justify-between items-center my-[15px] mx-0">
+                <label>Include lowercase letters</label>
+                <input class="mr-0" type="checkbox" id="lowercase" checked />
+            </div>
+            <div id="setting" class="flex justify-between items-center my-[15px] mx-0">
+                <label>Include numbers</label>
+                <input class="mr-0" type="checkbox" id="numbers" checked />
+            </div>
+            <div id="setting" class="flex justify-between items-center my-[15px] mx-0">
+                <label>Include symbols</label>
+                <input class="mr-0" type="checkbox" id="symbols" checked />
+            </div>
+        </div>
+        <button id="generate"
+            class="block w-full text-white bg-body-and-buttons py-[8px] px-[12px] text-base cursor-pointer transition-all hover:bg-[#857683]">
+            Generate password
+        </button>
+    </div>
+
+</body>
+
+</html>
